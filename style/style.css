@@ -1,0 +1,1574 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* Global styles */
+:root {
+    --primary: #ffd700;
+    --secondary: #ffeb3b;
+    --dark: #000000;
+    --light: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+    background: linear-gradient(45deg, #000000, #111111, #222222);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: var(--light);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-top: 60px;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Main container */
+.main-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Animations */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+    50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.6); }
+    100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.3); }
+}
+
+/* Utility classes */
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.logo{
+    width:20%;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    
+    display:flex;
+    width: 80px; /* Set the width */
+  height: auto; /* Maintain aspect ratio */
+  margin: 30px auto; /* Center it with margin */
+  display: block; /* Center with margin-auto */
+  border-radius: 50%; /* Make it circular */
+  padding: 10px; /* Add padding around the image */
+  
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+}
+.nav-list{  /* for navigation bar length */
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li{
+    margin: 0 1rem;
+}
+
+.nav-list li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.nav-list li a:hover{
+    color: #ffd700;
+}
+
+.rightNav{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+#search{
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+.background{
+    background: rgba(0, 0, 0, 0.7); /* The dark overlay color */
+    background-image: url('../images/nn.jpg'); /* The background image */
+    background-size: cover; /* Ensures the image covers the container */
+    background-blend-mode: darken; /* Blends the color with the image */
+    backdrop-filter: blur(60px);
+}
+.firstSection{
+    padding-top: 80px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+.box-main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem;
+    color: white;
+    text-align: center;
+}
+
+.firstHalf{
+    margin-bottom: 2rem;
+}
+
+.text-big{
+    font-size: 3.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1rem;
+}
+.text-small{
+    color: var(--light);
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    margin: 0 auto;
+}
+.btn{
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: var(--dark);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+.buttons {
+    margin: 2rem 0;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+.btn-sm{
+    padding:6px 10px;
+    /* vertical-align: middle; */
+}
+.secRight {
+    display: flex;
+    justify-content: space-evenly;
+    /* padding: 60px; */
+    text-align: center;
+    border-radius: 10px;
+    flex-direction: row-reverse;
+    padding: 10px 20px;       /* Add padding to the content */
+    margin: 2px auto;        /* Center the container */
+    max-width: 800px;         /* Limit the width of the text block */
+    text-align: center;       /* Center-align the text */
+    border-radius: 10px;      /* Optional: Add rounded corners */
+    flex-direction: row-reverse;
+    font-size: 20px;
+}
+
+.sectionTag {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 25px;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.sectionSubTag {
+    font-size: 1.2rem;
+    color:black;
+    margin-bottom: 20px; /* Adds space between the text and the image */
+    max-width: 600px; /* Optional: limit the text width */
+    justify-content: center;
+    width:4000%;
+}
+
+.thumbnail {
+    display: flex;
+    justify-content: right; /* Center the image horizontally */
+    width: 40%;
+    padding: 0 20px;
+}
+
+.thumbnail img {
+    width: 100%; /* Ensure the image is responsive */
+    max-width: 500px; /* Limit the image width to 500px */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Optional: rounded corners */
+    
+}
+
+.section-left {
+    display: flex;
+    justify-content: space-evenly;
+    /* padding: 60px; */
+    text-align: center;
+    border-radius: 10px;
+    flex-direction: row-reverse;
+    padding: 20px 40px;       /* Add padding to the content */
+    margin: 20px auto;        /* Center the container */
+    max-width: 800px;         /* Limit the width of the text block */
+    text-align: center;       /* Center-align the text */
+    border-radius: 10px; 
+      /* Optional: Add rounded corners */
+    font-size: 20px;
+}
+
+.section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 20px;
+    margin: 0 auto 60px auto; /* Consistent bottom margin */
+    max-width: 1200px; /* Increased max-width for better layout */
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact{
+    background: rgba(0, 0, 0, 0.85);
+    padding: 60px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.form {
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 15px;
+    max-width: 500px;
+    width: 100%;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: formAppear 0.8s ease-out;
+}
+
+.form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(255, 215, 0, 0.2);
+    border-color: rgba(255, 215, 0, 0.5);
+}
+
+@keyframes formAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.pageTitle {
+    font-size: 2.5rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 10px;
+    animation: titleGlow 2s ease-in-out infinite;
+}
+
+.secondaryTitle {
+    color: #ffffff;
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.formEntry {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.formEntry:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.formEntry::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.message {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.termsConditions {
+    margin-right: 10px;
+}
+
+.form label {
+    color: #ffffff;
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.form label span {
+    color: var(--primary);
+    transition: color 0.3s ease;
+}
+
+.form label span:hover {
+    color: var(--secondary);
+}
+
+.submit {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: #000000;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+.submit:hover::before {
+    left: 100%;
+}
+
+@keyframes titleGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+}
+
+/* Responsive styles for contact form */
+@media (max-width: 768px) {
+    .wrapper {
+        padding: 15px;
+    }
+    
+    .form {
+        padding: 30px;
+    }
+    
+    .pageTitle {
+        font-size: 2rem;
+    }
+    
+    .formEntry {
+        padding: 12px;
+    }
+}
+
+/* Add animation for form elements */
+.formEntry {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+.formEntry:nth-child(1) { animation-delay: 0.2s; }
+.formEntry:nth-child(2) { animation-delay: 0.3s; }
+.formEntry:nth-child(3) { animation-delay: 0.4s; }
+.formEntry:nth-child(4) { animation-delay: 0.5s; }
+.submit { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  background: linear-gradient(-45deg, #000000, #1a1a1a, #ffd700, #ffeb3b);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Animation keyframes */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+}
+
+/* Section styles */
+.section, .section-left, .section-special {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 15px;
+    margin: 40px auto;
+    padding: 40px;
+    max-width: 1200px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section:hover, .section-left:hover, .section-special:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(255, 215, 0, 0.2);
+    border-color: rgba(255, 215, 0, 0.4);
+}
+
+.paras {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.thumbnail {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.thumbnail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+}
+
+.sectionTag {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.sectionTag a {
+    color: #ffd700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sectionTag a:hover {
+    color: #ffeb3b;
+}
+
+.sectionSubTag {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.sectionSubTag ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sectionSubTag li {
+    margin: 10px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.sectionSubTag li:before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+}
+
+/* Section Left specific styles */
+.section-left {
+    flex-direction: row-reverse;
+}
+
+.section-left .paras {
+    padding-right: 0;
+    padding-left: 40px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .section, .section-left {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .paras {
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .section-left .paras {
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .sectionTag {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .thumbnail {
+        width: 100%;
+    }
+}
+
+/* Loading Animation */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+.loading-text {
+    margin-top: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.pl {
+    width: 6em;
+    height: 6em;
+}
+
+.pl__ring {
+    animation: ringA 2s linear infinite;
+}
+
+.pl__ring--a {
+    stroke: #f42f25;
+}
+
+.pl__ring--b {
+    animation-name: ringB;
+    stroke: #f49725;
+}
+
+.pl__ring--c {
+    animation-name: ringC;
+    stroke: #255ff4;
+}
+
+.pl__ring--d {
+    animation-name: ringD;
+    stroke: #f42582;
+}
+
+/* Animations */
+@keyframes ringA {
+    from, 4% {
+        stroke-dasharray: 0 660;
+        stroke-width: 20;
+        stroke-dashoffset: -330;
+    }
+
+    12% {
+        stroke-dasharray: 60 600;
+        stroke-width: 30;
+        stroke-dashoffset: -335;
+    }
+
+    32% {
+        stroke-dasharray: 60 600;
+        stroke-width: 30;
+        stroke-dashoffset: -595;
+    }
+
+    40%, 54% {
+        stroke-dasharray: 0 660;
+        stroke-width: 20;
+        stroke-dashoffset: -660;
+    }
+
+    62% {
+        stroke-dasharray: 60 600;
+        stroke-width: 30;
+        stroke-dashoffset: -665;
+    }
+
+    82% {
+        stroke-dasharray: 60 600;
+        stroke-width: 30;
+        stroke-dashoffset: -925;
+    }
+
+    90%, to {
+        stroke-dasharray: 0 660;
+        stroke-width: 20;
+        stroke-dashoffset: -990;
+    }
+}
+
+@keyframes ringB {
+    from, 12% {
+        stroke-dasharray: 0 220;
+        stroke-width: 20;
+        stroke-dashoffset: -110;
+    }
+
+    20% {
+        stroke-dasharray: 20 200;
+        stroke-width: 30;
+        stroke-dashoffset: -115;
+    }
+
+    40% {
+        stroke-dasharray: 20 200;
+        stroke-width: 30;
+        stroke-dashoffset: -195;
+    }
+
+    48%, 62% {
+        stroke-dasharray: 0 220;
+        stroke-width: 20;
+        stroke-dashoffset: -220;
+    }
+
+    70% {
+        stroke-dasharray: 20 200;
+        stroke-width: 30;
+        stroke-dashoffset: -225;
+    }
+
+    90% {
+        stroke-dasharray: 20 200;
+        stroke-width: 30;
+        stroke-dashoffset: -305;
+    }
+
+    98%, to {
+        stroke-dasharray: 0 220;
+        stroke-width: 20;
+        stroke-dashoffset: -330;
+    }
+}
+
+@keyframes ringC {
+    from {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: 0;
+    }
+
+    8% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -5;
+    }
+
+    28% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -175;
+    }
+
+    36%, 58% {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: -220;
+    }
+
+    66% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -225;
+    }
+
+    86% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -395;
+    }
+
+    94%, to {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: -440;
+    }
+}
+
+@keyframes ringD {
+    from, 8% {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: 0;
+    }
+
+    16% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -5;
+    }
+
+    36% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -175;
+    }
+
+    44%, 50% {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: -220;
+    }
+
+    58% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -225;
+    }
+
+    78% {
+        stroke-dasharray: 40 400;
+        stroke-width: 30;
+        stroke-dashoffset: -395;
+    }
+
+    86%, to {
+        stroke-dasharray: 0 440;
+        stroke-width: 20;
+        stroke-dashoffset: -440;
+    }
+}
+
+.loading-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Add styles for lazy-loaded images */
+img.lazy-load {
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+img.lazy-load.loaded {
+  opacity: 1;
+}
+
+/* Add a placeholder style */
+.image-placeholder {
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  background-size: 200% 100%;
+  animation: 1.5s shine linear infinite;
+  border-radius: 10px;
+  height: 200px;
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+/* Add these animation styles to your CSS */
+.section, .secRight, .section-left {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.animate, .secRight.animate, .section-left.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sectionTag {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.sectionTag::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00FFFF, #007BFF);
+    transition: width 0.8s ease;
+}
+
+.section.animate .sectionTag::after, 
+.secRight.animate .sectionTag::after, 
+.section-left.animate .sectionTag::after {
+    width: 100%;
+}
+
+.thumbnail img {
+    transform: scale(0.95);
+    opacity: 0.8;
+    transition: transform 0.6s ease, opacity 0.6s ease, box-shadow 0.6s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section.animate .thumbnail img, 
+.secRight.animate .thumbnail img, 
+.section-left.animate .thumbnail img {
+    transform: scale(1);
+    opacity: 1;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.sectionSubTag {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+.section.animate .sectionSubTag, 
+.secRight.animate .sectionSubTag, 
+.section-left.animate .sectionSubTag {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add a subtle hover effect */
+.section:hover .thumbnail img, 
+.secRight:hover .thumbnail img, 
+.section-left:hover .thumbnail img {
+    transform: scale(1.03);
+}
+
+/* Career Pathways Section */
+.section-special {
+    padding: 60px 20px;
+    margin: 0 auto 60px auto; /* Match other sections */
+    max-width: 1200px;
+    background: linear-gradient(135deg, #f9f9f9, #f0f0f0);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-special.animate .section-header {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-underline {
+    height: 4px;
+    width: 70px;
+    background: linear-gradient(90deg, #00FFFF, #007BFF);
+    margin: 0 auto;
+    border-radius: 2px;
+    transition: width 0.8s ease;
+}
+
+.section-special.animate .section-underline {
+    width: 70px;
+}
+
+.pathway-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.pathway-card {
+    flex: 1;
+    min-width: 300px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pathway-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+}
+
+.pathway-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pathway-icon i {
+    font-size: 40px;
+    color: #ffd700;
+}
+
+.pathway-card h3 {
+    color: #ffd700;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.pathway-card p {
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.pathway-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.pathway-skills span {
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.pathway-button {
+    display: inline-block;
+    background: linear-gradient(45deg, #ffd700, #ffeb3b);
+    color: black;
+    padding: 10px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pathway-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Animation for the pathway cards */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced hover effects for existing sections */
+.sectionTag {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.sectionTag::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00FFFF, #007BFF);
+    transition: width 0.8s ease;
+}
+
+.section.animate .sectionTag::after, 
+.secRight.animate .sectionTag::after, 
+.section-left.animate .sectionTag::after {
+    width: 100%;
+}
+
+.thumbnail img {
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.section:hover .thumbnail img, 
+.secRight:hover .thumbnail img, 
+.section-left:hover .thumbnail img {
+    transform: scale(1.03);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove excess margin from hr */
+hr {
+    margin: 0;
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    display: none; /* Remove hr as it's creating inconsistent spacing */
+}
+
+/* Add these new animations and effects while keeping existing styles */
+
+/* Navbar animations */
+.nav-list li a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-list li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: cyan;
+    transition: width 0.3s ease;
+}
+
+.nav-list li a:hover::after {
+    width: 100%;
+}
+
+/* Logo animation */
+.logo img {
+    transition: transform 0.5s ease;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Welcome section animations */
+.text-big {
+    animation: slideInLeft 1s ease-out;
+    position: relative;
+}
+
+.text-small {
+    animation: fadeIn 1s ease-out 0.5s both;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Button hover effects */
+.btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+/* Section animations */
+.secRight, .section-left, .section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.secRight.animate, .section-left.animate, .section.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Image hover effects */
+.thumbnail img {
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.thumbnail:hover img {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Section tag hover effect */
+.sectionTag a {
+    position: relative;
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sectionTag a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.sectionTag a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* List item animations */
+.sectionSubTag ul li {
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: all 0.5s ease;
+    position: relative;
+    padding-left: 20px;
+}
+
+.section.animate .sectionSubTag ul li,
+.secRight.animate .sectionSubTag ul li,
+.section-left.animate .sectionSubTag ul li {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.sectionSubTag ul li:nth-child(1) { transition-delay: 0.2s; }
+.sectionSubTag ul li:nth-child(2) { transition-delay: 0.4s; }
+.sectionSubTag ul li:nth-child(3) { transition-delay: 0.6s; }
+
+.sectionSubTag ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: #0072ff;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sectionSubTag ul li:hover::before {
+    opacity: 1;
+}
+
+/* Contact form animations */
+.form input {
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.form input:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-color: #0072ff;
+}
+
+.btn-dark {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-dark:hover {
+    background: #0072ff;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,114,255,0.3);
+}
+
+/* Add smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Background gradient animation */
+.background {
+    position: relative;
+    overflow: hidden;
+}
+
+.background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.1) 50%,
+        rgba(255,255,255,0) 100%);
+    animation: shine 8s infinite linear;
+}
+
+@keyframes shine {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(50%); }
+}
+
+/* Add this JavaScript to enable animations on scroll */
+
+/* Add this at the beginning of the file */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(-45deg, #000000, #1a1a1a, #ffd700, #ffeb3b);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: white;
+}
+
+/* Update section backgrounds to be semi-transparent */
+.section, .section-left, .section-special {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    margin: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover, .section-left:hover, .section-special:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(255, 215, 0, 0.3);
+}
+
+/* Update navbar style */
+.navbar {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+/* Update text colors */
+.text-big {
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.text-small {
+    color: #ffffff;
+}
+
+/* Update buttons */
+.btn {
+    background: linear-gradient(45deg, #ffd700, #ffeb3b);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Update pathway cards */
+.pathway-card {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pathway-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.3);
+}
+
+.pathway-icon i {
+    color: #ffd700;
+}
+
+/* Add floating animation for images */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.thumbnail img {
+    animation: float 6s ease-in-out infinite;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Update contact form */
+.contact .wrapper {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
+
+.formEntry {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    color: white;
+}
+
+.formEntry::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Add glow effect to important elements */
+.text-big, h2, .pathway-card h3 {
+    position: relative;
+}
+
+.text-big:after, h2:after, .pathway-card h3:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+    animation: glow 2s linear infinite;
+}
+
+@keyframes glow {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}

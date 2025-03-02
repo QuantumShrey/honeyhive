@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <title>SkillPath</title>
+    <!-- Add resource hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/images/HIVE.gif" as="image">
+    <link rel="preload" href="/style/style.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <svg class="pl" width="240" height="240" viewBox="0 0 240 240">
+            <circle class="pl__ring pl__ring--a" cx="120" cy="120" r="105" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 660" stroke-dashoffset="-330" stroke-linecap="round"></circle>
+            <circle class="pl__ring pl__ring--b" cx="120" cy="120" r="35" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 220" stroke-dashoffset="-110" stroke-linecap="round"></circle>
+            <circle class="pl__ring pl__ring--c" cx="85" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+            <circle class="pl__ring pl__ring--d" cx="155" cy="120" r="70" fill="none" stroke="#000" stroke-width="20" stroke-dasharray="0 440" stroke-linecap="round"></circle>
+        </svg>
+        <p class="loading-text">Loading Honey Hive...</p>
+    </div>
+
+    <nav class="navbar">
+        <ul class="nav-list">
+            <div class="logo"><img src="/images/HIVE.gif" alt="logo"></div>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="#mentorship">Mentorship</a></li>
+            <li><a href="choice.html">Dashboard</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+        <div class="rightNav">
+            <input type="text" name="search" id="search">
+            <button class="btn btn-sm">Search</button>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <section class="firstSection">
+            <div class="box-main">
+                <div class="firstHalf">
+                    <p class="text-big">Welcome to Honey Hive!!</p>
+                    <p class="text-small">Welcome to Honey Hive, your AI-powered platform to unlock your potential. Designed for students, professionals,
+                         and career explorers, Honey Hive tailors your learning journey with curated courses, expert mentorship, and
+                         personalized tools. Shape your future with skills that matter—Honey Hive supports you every step of the way.</p>
+                </div>
+                <div class="buttons">
+                    <button class="btn">Watch</button>
+                    <button class="btn">Save to watch later</button>
+                </div>
+                <div class="secondHalf">
+                    <img src="/images/ar.jpg" alt="honey" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- Learn Future Ready Skills Section -->
+        <section class="section">
+            <div class="paras">
+                <p class="sectionTag">
+                    <a href="https://www.coursera.org/learn/ai-for-everyone" target="_blank">Learn Future Ready Skills</a>
+                </p>
+                <div class="sectionSubTag">
+                    <ul>
+                        <li>Stay ahead with courses in AI, Blockchain, and Sustainability.</li>
+                        <li>Engage in hands-on projects to apply your knowledge.</li>
+                        <li>Follow expert-designed tutorials tailored to industry demands.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="thumbnail">
+                <img src="/images/susan-q-yin-2JIvboGLeho-unsplash.jpg" alt="Learning skills">
+            </div>
+        </section>
+
+        <!-- Mentorship Section -->
+        <section class="section-left">
+            <div class="paras">
+                <p class="sectionTag">
+                    <a href="https://adplist.org/" target="_blank">Grow with Mentorship</a>
+                </p>
+                <div class="sectionSubTag">
+                    <ul>
+                        <li>Connect with industry mentors for personalized advice.</li>
+                        <li>Participate in webinars, workshops, and community discussions.</li>
+                        <li>Collaborate with peers to share ideas and solutions.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="thumbnail">
+                <img src="/images/priscilla-du-preez-XkKCui44iM0-unsplash.jpg" alt="Mentorship">
+            </div>
+        </section>
+
+        <!-- Showcase Growth Section -->
+        <section class="section">
+            <div class="paras">
+                <p class="sectionTag">
+                    <a href="https://www.credly.com/users/honey-priya.1325e4ac" target="_blank">Showcase Your Growth</a>
+                </p>
+                <div class="sectionSubTag">
+                    <ul>
+                        <li>Earn digital badges to validate your skills.</li>
+                        <li>Build a professional portfolio to display your achievements.</li>
+                        <li>Unlock opportunities for internships and jobs.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="thumbnail">
+                <img src="/images/compare-fibre-Y8TiLvKnLeg-unsplash.jpg" alt="Showcase growth">
+            </div>
+        </section>
+
+        <!-- New Section: Career Pathways -->
+        <section class="section-special">
+            <div class="section-header">
+                <h2>Career Pathways</h2>
+                <div class="section-underline"></div>
+            </div>
+            
+            <div class="pathway-cards">
+                <div class="pathway-card">
+                    <div class="pathway-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Technology</h3>
+                    <p>Explore careers in software development, cybersecurity, data science, and cloud computing.</p>
+                    <div class="pathway-skills">
+                        <span>Python</span>
+                        <span>JavaScript</span>
+                        <span>AWS</span>
+                        <span>Machine Learning</span>
+                    </div>
+                    <a href="#" class="pathway-button">Explore Path</a>
+                </div>
+                
+                <div class="pathway-card">
+                    <div class="pathway-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Business</h3>
+                    <p>Discover opportunities in marketing, finance, project management, and entrepreneurship.</p>
+                    <div class="pathway-skills">
+                        <span>Marketing</span>
+                        <span>Finance</span>
+                        <span>Leadership</span>
+                        <span>Analytics</span>
+                    </div>
+                    <a href="#" class="pathway-button">Explore Path</a>
+                </div>
+                
+                <div class="pathway-card">
+                    <div class="pathway-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Creative</h3>
+                    <p>Build skills in design, content creation, UX/UI, and digital media production.</p>
+                    <div class="pathway-skills">
+                        <span>UI/UX</span>
+                        <span>Graphic Design</span>
+                        <span>Content Writing</span>
+                        <span>Video Production</span>
+                    </div>
+                    <a href="#" class="pathway-button">Explore Path</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <hr>
+    <section class="contact" id="contact">
+        <div class="wrapper">
+            <form class="form">
+                <div class="title">
+                    <h2 class="pageTitle">Get in Touch</h2>
+                    <p class="secondaryTitle">We'd love to hear from you</p>
+                </div>
+                <input type="text" class="formEntry" placeholder="Your Name" required />
+                <input type="email" class="formEntry" placeholder="Your Email" required />
+                <textarea class="formEntry message" placeholder="Your Message" required></textarea>
+                <div class="terms-container">
+                    <input type="checkbox" class="termsConditions" id="terms" required>
+                    <label for="terms">
+                        I Accept the <span>Terms of Use</span> & <span>Privacy Policy</span>
+                    </label>
+                </div>
+                <button type="submit" class="submit formEntry">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Initialize animations and visibility
+        document.addEventListener('DOMContentLoaded', function() {
+            // Remove loading overlay after a short delay
+            setTimeout(function() {
+                const loadingOverlay = document.getElementById('loadingOverlay');
+                if (loadingOverlay) {
+                    loadingOverlay.style.opacity = '0';
+                    setTimeout(() => loadingOverlay.remove(), 500);
+                }
+            }, 1000);
+
+            // Make all sections visible immediately
+            const sections = document.querySelectorAll('.section, .section-left, .section-special, .firstSection');
+            sections.forEach(section => {
+                section.style.opacity = '1';
+                section.style.transform = 'translateY(0)';
+            });
+
+            // Add hover animations to buttons
+            const buttons = document.querySelectorAll('.btn, .pathway-button');
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 5px 15px rgba(255, 215, 0, 0.4)';
+                });
+                button.addEventListener('mouseout', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+
+            // Add smooth scroll behavior
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId !== '#') {
+                        document.querySelector(targetId).scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
