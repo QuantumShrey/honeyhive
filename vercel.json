@@ -1,9 +1,15 @@
 {
   "version": 2,
   "builds": [
-    { "src": "pages/**/*.html", "use": "@vercel/static" }
+    { "src": "pages/**/*", "use": "@vercel/static" },
+    { "src": "style/**/*", "use": "@vercel/static" },
+    { "src": "images/**/*", "use": "@vercel/static" },
+    { "src": "js/**/*", "use": "@vercel/static" }
   ],
   "routes": [
+    { "src": "/style/(.*)", "dest": "/style/$1" },
+    { "src": "/images/(.*)", "dest": "/images/$1" },
+    { "src": "/js/(.*)", "dest": "/js/$1" },
     { "src": "/", "dest": "/pages/index.html" },
     { "src": "/home", "dest": "/pages/home.html" },
     { "src": "/choice", "dest": "/pages/choice.html" },
